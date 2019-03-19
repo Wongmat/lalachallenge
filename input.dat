@@ -1,0 +1,4 @@
+repository,min_version
+kubernetes/kubernetes,1.8.0
+prometheus/prometheus,2.7.0
+ellie-app/ellie,1.0.0
