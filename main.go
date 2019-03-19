@@ -31,7 +31,7 @@ func LatestVersions(releases []*semver.Version, minVersion *semver.Version) []*s
 }
 
 //Reads from the provided file until scanner.Scan() == false
-func Reader(location string) map[string]string {
+func readFile(location string) map[string]string {
 	var output = make(map[string]string)
 	file, err := os.Open(location)
 	if err != nil {
@@ -63,7 +63,7 @@ func main() {
 	path, _ := reader.ReadString('\n')
 	path = path[:len(path)-1]
 	fmt.Println("Reading from " + path + "...")
-	list := Reader(path)
+	list := readFile(path)
 
 	for names, version := range list {
 		// Github
